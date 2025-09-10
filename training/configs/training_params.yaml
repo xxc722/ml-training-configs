@@ -6,10 +6,8 @@ general:
 
 # 批次与内存相关配置（核心追踪节点）
 batch:
-  train_batch_size: 16          # 初始值（将被修改为4）
-  eval_batch_size: 32           # 初始值（将同步修改）
-  gradient_accumulation: 2      # 辅助参数，无需追踪
-  max_grad_norm: 1.0            # 辅助参数，无需追踪
+  train_batch_size: 4
+  eval_batch_size: 8
 
 # 优化器配置
 optimizer:
