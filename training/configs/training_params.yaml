@@ -1,0 +1,24 @@
+# 机器学习训练参数配置文件
+general:
+  model_type: "image-classifier"
+  dataset_name: "cifar-10"
+  total_epochs: 20
+
+# 批次与内存相关配置（核心追踪节点）
+batch:
+  train_batch_size: 16          # 初始值（将被修改为4）
+  eval_batch_size: 32           # 初始值（将同步修改）
+  gradient_accumulation: 2      # 辅助参数，无需追踪
+  max_grad_norm: 1.0            # 辅助参数，无需追踪
+
+# 优化器配置
+optimizer:
+  name: "AdamW"
+  learning_rate: 3e-4
+  weight_decay: 0.01
+
+# 日志与保存配置
+logging:
+  log_interval: 100
+  save_checkpoint: true
+  checkpoint_dir: "./checkpoints"
